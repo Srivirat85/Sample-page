@@ -27,7 +27,7 @@ The following Pipeline code skeletons illustrate the fundamental differences bet
 
 Be aware that both stages and steps (above) are common elements of both Declarative and Scripted Pipeline syntax.
 
-## Declarative Pipeline fundamentals
+### Declarative Pipeline fundamentals
 In Declarative Pipeline syntax, the pipeline block defines all the work done throughout your entire Pipeline.
 
 ```markdown
@@ -52,14 +52,6 @@ pipeline {
         }
     }
 }
-# Header 1
-## Header 2
-### Header 3
-
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 1. Execute this Pipeline or any of its stages, on any available agent.
 2. Defines the "Build" stage.
@@ -69,16 +61,41 @@ pipeline {
 6. Defines the "Deploy" stage.
 7. Perform some steps related to the "Deploy" stage.
 
+### Scripted Pipeline fundamentals
+In Scripted Pipeline syntax, one or more node blocks do the core work throughout the entire Pipeline. Although this is not a mandatory requirement of Scripted Pipeline syntax, confining your Pipeline’s work inside of a node block does two things:
+
+1. Schedules the steps contained within the block to run by adding an item to the Jenkins queue. As soon as an executor is free on a node, the steps will run.
+
+2. Creates a workspace (a directory specific to that particular Pipeline) where work can be done on files checked out from source control.
+
+```markdown
+### Jenkinsfile (Scripted Pipeline)
+node {  
+    stage('Build') { 
+        // 
+    }
+    stage('Test') { 
+        // 
+    }
+    stage('Deploy') { 
+        // 
+    }
+}
+```
+1. 	Execute this Pipeline or any of its stages, on any available agent.
+2. Defines the "Build" stage. stage blocks are optional in Scripted Pipeline syntax. However, implementing stage blocks in a Scripted Pipeline provides clearer visualization of each `stage’s subset of tasks/steps in the Jenkins UI.
+3. Perform some steps related to the "Build" stage.
+4. Defines the "Test" stage.
+5. Perform some steps related to the "Test" stage.
+6. Defines the "Deploy" stage.
+7. Perform some steps related to the "Deploy" stage.
+
 ### Usage
 
 In order to run the Jenkins locally using docker,
-
-Copy the Dockerfile_jenkins_master to local as Dockerfile
-
-BuildImage using : docker build -t IMAGE_NAME .
-
-Run the Image using : docker run -d -p 8080:8080 IMAGE_NAME
-
+1. Copy the Dockerfile_jenkins_master to local as Dockerfile
+2. BuildImage using : docker build -t IMAGE_NAME .
+3. Run the Image using : docker run -d -p 8080:8080 IMAGE_NAME
 Now enter a UI to check at http://localhost:8080, that all run successfully.
 
 
