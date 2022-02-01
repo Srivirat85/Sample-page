@@ -1,8 +1,8 @@
 ## Jenkins
 
-You can use the [editor on GitHub](https://github.com/Srivirat85/rep1/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed.
 
 ### Markdown
 
@@ -40,6 +40,4 @@ Run the Image using : docker run -d -p 8080:8080 IMAGE_NAME
 
 Now enter a UI to check at http://localhost:8080, that all run successfully.
 
-### Conclusion
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
