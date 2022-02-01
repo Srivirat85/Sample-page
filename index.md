@@ -4,28 +4,70 @@ Jenkins is a self-contained, open source automation server which can be used to 
 
 Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed.
 
-### Markdown
+### What is Jenkins Pipeline?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Jenkins Pipeline (or simply "Pipeline" with a capital "P") is a suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins.
+Creating a Jenkinsfile and committing it to source control provides a number of immediate benefits:
+
+- Automatically creates a Pipeline build process for all branches and pull requests.
+
+- Code review/iteration on the Pipeline (along with the remaining source code).
+
+- Audit trail for the Pipeline.
+
+- Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
+
+- While the syntax for defining a Pipeline, either in the web UI or with a Jenkinsfile is the same, it is generally considered best practice to define the Pipeline in a Jenkinsfile and check that in to source control.
+
+The flowchart below is an example of one CD scenario easily modeled in Jenkins Pipeline:
+![image](https://user-images.githubusercontent.com/94677918/151970164-244f05fa-804c-44f6-bce6-7cd4486e50e1.png)
+
+### Pipeline syntax overview:
+The following Pipeline code skeletons illustrate the fundamental differences between Declarative Pipeline syntax and Scripted Pipeline syntax.
+
+Be aware that both stages and steps (above) are common elements of both Declarative and Scripted Pipeline syntax.
+
+## Declarative Pipeline fundamentals
+In Declarative Pipeline syntax, the pipeline block defines all the work done throughout your entire Pipeline.
 
 ```markdown
-Syntax highlighted code block
-
+### Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
 # Header 1
 ## Header 2
 ### Header 3
 
-- Bulleted
-
-1. Numbered
-2. List
 
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
 ```
-
-).
+1. Execute this Pipeline or any of its stages, on any available agent.
+2. Defines the "Build" stage.
+3. Perform some steps related to the "Build" stage.
+4. Defines the "Test" stage.
+5. Perform some steps related to the "Test" stage.
+6. Defines the "Deploy" stage.
+7. Perform some steps related to the "Deploy" stage.
 
 ### Usage
 
