@@ -33,8 +33,11 @@ For more details see [Basic writing and formatting syntax](https://docs.github.c
 In order to run the Jenkins locally using docker,
 
 Copy the Dockerfile_jenkins_master to local as Dockerfile
+
 BuildImage using : docker build -t IMAGE_NAME .
+
 Run the Image using : docker run -d -p 8080:8080 IMAGE_NAME
+
 Now enter a UI to check at http://localhost:8080, that all run successfully.
 
 ### Conclusion
