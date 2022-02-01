@@ -28,9 +28,15 @@ Syntax highlighted code block
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+### Usage
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Srivirat85/rep1/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+In order to run the Jenkins locally using docker,
+
+Copy the Dockerfile_jenkins_master to local as Dockerfile
+BuildImage using : docker build -t IMAGE_NAME .
+Run the Image using : docker run -d -p 8080:8080 IMAGE_NAME
+Now enter a UI to check at http://localhost:8080, that all run successfully.
 
 ### Conclusion
-t our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
